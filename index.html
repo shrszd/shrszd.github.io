@@ -1,114 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sazzad Shahrear - Research Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-        header {
-            background-color: #0073e6;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #f2f2f2;
-            padding: 10px;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #0073e6;
-            font-weight: bold;
-        }
-        section {
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 10px 0;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sazzad Shahrear - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>  
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Georgia', serif;
+      font-size: 16px;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      color: #000;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    a, button {
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    /* Header */
+    .header {
+      background-color: #5d4037;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    .nav-menu a {
+      color: white;
+      font-size: 1rem;
+    }
+
+    .nav-menu a:hover { color: #ffffff; }
+
+    /* Section Base */
+    section {
+      height: calc(100vh - 70px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      padding: 20px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .section-title {
+  font-size: 3rem;
+  font-weight: normal;  /* keeps it same as research */
+  line-height: 1.2;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(to bottom, transparent 0%, transparent 50%, white 50%, white 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 52%;
+      background: url('images/background.png') center/cover no-repeat;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-image {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content h1 {
+      color: white;
+      font-size: 3rem;
+    }
+
+    .hero-content .subtitle {
+      color: white;
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-content .description {
+      font-size: 1rem;
+      margin: 15px 0 30px;
+      max-width: 500px;
+      color: #000;
+    }
+
+    .icon-buttons {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .icon-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #eee;
+    }
+
+    .icon-buttons a:hover { transform: scale(1.2); background-color: #ddd; }
+    .icon-buttons a.linkedin i { color: #0077B5; }
+    .icon-buttons a.scholar i { color: #4285F4; }
+
+    /* Buttons (Unified) */
+.btn-container {
+  display: flex;
+  justify-content: flex-start; /* or center if you prefer */
+}
+
+.btn {
+  display: inline-block;   /* prevents stretching */
+  padding: 12px 25px;
+  border: 2px solid #d4af8c;
+  color: #d4af8c;
+  background: transparent;
+  min-width: 150px;
+  text-align: center;
+  white-space: nowrap;    /* prevents text wrap that widens button */
+  width: 180px;
+}
+
+.btn:hover {
+  background-color: #d4af8c;
+  color: #5d4037;
+}
+
+
+    /* Containers */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: flex-start;
+    }
+
+    /* Research Section */
+    .research {
+      background-color: #f5f0ed;
+      color: #4b2e1e;
+    }
+
+    .research-title {
+      font-size: 3rem;
+    }
+
+    .research-description {
+      max-width: 400px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    /* Publications Section */
+    .publications { background-color: white; }
+
+    .publication-title { font-size: 3rem; }
+    
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .publication-item {
+      padding: 1.5rem;
+      background-color: #ff9900;
+      border-radius: 8px;
+      border-left: 4px solid black;
+    }
+
+    .publication-text { color: #000; }
+
+    /* Contact Section */
+    .contact {
+      height: auto;
+      background-color: #996600;
+      color: #F5DEB3;
+      padding: 60px 40px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .contact-container { max-width: 600px; }
+
+    .contact h1 {
+      font-size: 3.5rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+
+    .department-name, .address-line, .email
+    {
+      color: #D2B48C;
+      margin-bottom: 0px;
+    }
+
+    .building-name, .phone {
+      color: #D2B48C;
+      margin-bottom: 15px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      background-color: #D2B48C;
+    }
+
+    .social-icon:hover { background-color: #F5DEB3; }
+
+    /* Footer */
+    .footer {
+      background-color: white;
+      padding: 1rem;
+      text-align: center;
+      color: black;
+    }
+
+    /* Chat Widget */
+    .chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #333;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .chat-widget:hover { background-color: #555; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-container,
+      .main-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .research, .contact { text-align: center; align-items: center; }
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">Sazzad Shahrear</div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header>
-    <h1>Sazzad Shahrear</h1>
-    <p>Doctoral Researcher, University of Helsinki</p>
-    <!-- Add a profile picture -->
-   <img src="images/shrszd.jpeg" alt="Sazzad Shahrear" style="border-radius: 50%;">
-</header>
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div class="hero-container">
+      <div>
+        <img src="images/shrszd.jpeg" alt="Sazzad Shahrear" class="profile-image">
+      </div>
+      <div class="hero-content">
+        <h1>Sazzad Shahrear</h1>
+        <p class="subtitle">Doctoral Researcher, University of Helsinki</p>
+        <div class="icon-buttons">
+          <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="scholar"><i class="fas fa-graduation-cap"></i></a>
+        </div>
+        <p class="description">
+          Welcome to my research portfolio! I am dedicated to advancing knowledge in [Your Research Field].
+        </p>
+        <a href="#research" class="btn">Explore My Work</a>
+      </div>
+    </div>
+  </section>
 
-<nav>
-    <a href="#home">Home</a>
-    <a href="#about">About Me</a>
-    <a href="#research">Research</a>
-    <a href="publications.html">Publications</a>
-    <a href="test.html">Contact</a>
-</nav>
+  <!-- Research Section -->
+  <section class="research" id="research">
+    <div class="main-container">
+      <div class="section-title">Areas of <br> Research</div>
+      <div class="research-description">
+        <p>Delve into my research interests and academic pursuits. Through rigorous exploration and study, I have focused on [Your Research Interests]. This space provides an insight into the depth and breadth of my research, and the impact it has in the academic and scientific spheres.</p>
+        <button class="btn">Discover More</button>
+      </div>
+    </div>
+  </section>
 
-<section id="home" class="container">
-    <h2>Home</h2>
-    <p>Welcome to my personal website. I am a researcher in Computational biology. Here, you can find information about my research projects, publications, and how to get in touch with me.</p>
-    <!-- Add a welcome or research related image -->
-    <img src="welcome-image.jpg" alt="Research Field Image">
-</section>
+  <!-- Publications Section -->
+  <section class="publications" id="publications">
+    <div class="main-container">
+      <div><h1 class="section-title">Highlighted <br> Publications</h1></div>
+      <div>
+        <div class="publications-list">
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <button class="btn">Explore All Publications</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="about" class="container">
-    <h2>About Me</h2>
-    <p>Here you can provide details about your background, education, and your research interests. Share your journey and what motivates your work.</p>
-    <!-- Add an image related to your background or research area -->
-    <img src="about-image.jpg" alt="About Me Image">
-</section>
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <h1>Contact Information</h1>
+      <div class="department-name">Department of Chemistry</div>
+      <div class="building-name">Science Center</div>
+      <div class="address-line">500 Terry Francine St.</div>
+      <div class="address-line">San Francisco, CA 94158</div>
+      <div class="email">info@mysite.com</div>
+      <div class="phone">123-456-7890</div>
+      <div class="social-links">
+        <div class="social-icon"></div>
+        <div class="social-icon"></div>
+      </div>
+    </div>
+  </section>
 
-<section id="research" class="container">
-    <h2>Research</h2>
-    <p>List your research projects here. You can include brief descriptions and links to more detailed information or project pages if available.</p>
-    <!-- Add an image related to your research -->
-    <img src="research-image.jpg" alt="Research Image">
-</section>
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Sazzad Shahrear
+  </footer>
 
-<section id="publications" class="container">
-    <h2>Publications</h2>
-    <p>Provide a list of your publications. Include links to full papers or abstracts if available.</p>
-    <!-- Add an image related to publications or your work -->
-    <img src="publications-image.jpg" alt="Publications Image">
-</section>
-
-<section id="contact" class="container">
-    <h2>Contact</h2>
-    <p>If you would like to get in touch, please email me at <a href="mailto:shrszd@gmail.com">My email</a>.</p>
-    <!-- Add an image that complements the contact section -->
-    <img src="contact-image.jpg" alt="Contact Image">
-</section>
-
-<footer>
-    <p>&copy; 2025 Sazzad Shahrear. All rights reserved.</p>
-</footer>
-
+  <!-- Chat Widget -->
+  <div class="chat-widget">💬 Let's Chat!</div>
 </body>
 </html>
