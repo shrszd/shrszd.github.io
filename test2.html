@@ -6,6 +6,10 @@
   <title>Sazzad Shahrear - Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+      :root {
+    --vh: 1vh; /* fallback */
+  }
+    
     * {
       margin: 0;
       padding: 0;
@@ -60,13 +64,24 @@
     }
 
     /* Fullscreen Sections Shared */
-    section {
-      height: 100%;
+    .section {
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 2rem;
     }
+
+      /* Full-screen sections */
+  .section {
+    height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    padding: 2rem;
+  }
 
     /* Hero Section */
     .hero {
@@ -417,5 +432,17 @@
 
   <!-- Chat Widget -->
   <div class="chat-widget">💬 Let's Chat!</div>
+
+<!-- JS for viewport height fix -->
+<script>
+function setVh() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+window.addEventListener('resize', setVh);
+window.addEventListener('load', setVh);
+setVh();
+</script>
+  
 </body>
 </html>
