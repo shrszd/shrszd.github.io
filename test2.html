@@ -73,24 +73,9 @@
     padding: 20px;
     width: 100%;
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    font-family: 'Georgia', serif;
   }
 
-    .left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end; /* right align content */
-    text-align: right;     /* align text */
-  }
-
-    .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
-  }
 
     /* Hero Section */
     .hero {
@@ -240,10 +225,26 @@
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: start;
-      gap: 60px;
-      align-items: center;
+      gap: 100px; }
+      /*align-items: center;
     }
 
+    
+    .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end; /* right align content 
+    text-align: right;     /* align text 
+  }
+
+    .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }*/
 
     .section-title {
       font-size: 3rem;
@@ -261,7 +262,7 @@
       padding: 1.5rem;
       background-color: rgba(255,255,255,0.6);
       border-radius: 8px;
-      border-left: 4px solid #d4af37;
+      border-left: 4px solid black;
     }
 
     .publication-text { color: #000; }
@@ -403,14 +404,10 @@
   <!-- Research Section -->
   <section class="research" id="research">
     <div class="main-container">
-      <div class="left">
       <div class="title">Areas of <br> Research</div>
-      </div>
-      <div class="right">
       <div class="description">
         <p>Delve into my research interests and academic pursuits. Through rigorous exploration and study, I have focused on [Your Research Interests]. This space provides an insight into the depth and breadth of my research, and the impact it has in the academic and scientific spheres.</p>
         <button>Discover More</button>
-      </div>
       </div>
     </div>
   </section>
@@ -418,7 +415,7 @@
   <!-- Publications Section -->
   <section class="publications" id="publications">
     <div class="main-container">
-      <div><h1 class="section-title">Highlighted Publications</h1></div>
+      <div><h1 class="section-title">Highlighted <br> Publications</h1></div>
       <div>
         <div class="publications-list">
           <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
