@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sazzad Shahrear - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -128,6 +129,40 @@
             max-width: 500px;
         }
 
+        
+      .icon-buttons {
+            margin: 5px 0; /* space between subtitle and description */
+            display: flex;
+            gap: 10px; /* space between icons */
+    }
+
+    .icon-buttons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #eee;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .icon-buttons a:hover {
+      transform: scale(1.2);
+      background-color: #ddd;
+    }
+
+    .icon-buttons a.linkedin i {
+      color: #0077B5; /* LinkedIn blue */
+      font-size: 1.2rem;
+    }
+
+    .icon-buttons a.scholar i {
+      color: #4285F4; /* Google Scholar blue */
+      font-size: 1.2rem;
+    }
+        
         .cta-button {
             display: inline-block;
             padding: 12px 25px;
@@ -219,6 +254,14 @@
             <div class="hero-content">
                 <h1>Sazzad Shahrear</h1>
                 <p class="subtitle">Doctoral Researcher, University of Helsinki</p>
+                  <div class="icon-buttons">
+                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="linkedin">
+                            <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=yourid" target="_blank" class="scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                            </a>
+                            </div>
                 <p class="description">
                     Welcome to my research portfolio! I am dedicated to advancing knowledge in the field of [Your Research Field]. This website serves as a platform to share my academic journey, research work, and contributions to the scientific community. Feel free to explore and learn more about my passion for research and academic pursuits.
                 </p>
