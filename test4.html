@@ -168,7 +168,7 @@
   min-width: 150px;
   text-align: center;
   white-space: nowrap;    /* prevents text wrap that widens button */
-  width: 180px;
+  width: auto;
 }
 
 .btn:hover {
@@ -208,6 +208,7 @@
     .publications { background-color: white; }
 
     .publication-title { font-size: 3rem; }
+    
     .publications-list {
       display: flex;
       flex-direction: column;
@@ -220,6 +221,8 @@
       border-radius: 8px;
       border-left: 4px solid black;
     }
+
+    .publication-text { color: #000; }
 
     /* Contact Section */
     .contact {
@@ -239,9 +242,15 @@
       margin-bottom: 40px;
     }
 
-    .department-name, .address-line, .email, .building-name, .phone {
+    .department-name, .address-line, .email
+    {
       color: #D2B48C;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
+    }
+
+    .building-name, .phone {
+      color: #D2B48C;
+      margin-bottom: 15px;
     }
 
     .social-links {
@@ -348,9 +357,9 @@
       <div><h1 class="section-title">Highlighted <br> Publications</h1></div>
       <div>
         <div class="publications-list">
-          <div class="publication-item"><p>[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
-          <div class="publication-item"><p>[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
-          <div class="publication-item"><p>[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
           <button class="btn">Explore All Publications</button>
         </div>
       </div>
