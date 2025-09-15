@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sazzad Shahrear - Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  :root {
+    --vh: 1vh; /* fallback */
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Header */
+  .header {
+    background-color: #5d4037;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .logo {
+    color: white;
+    font-size: 1.5rem;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+
+  .nav-menu a:hover {
+    color: #d4af8c;
+  }
+
+  /* Full-screen sections */
+  .section {
+    height: calc(var(--vh, 1vh) * 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, white 50%, white 100%);
+    position: relative;
+    color: white;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('images/shrszd.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.3;
+  }
+
+  .hero img.profile-image {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .hero .description {
+    max-width: 600px;
+    color: #000;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .icon-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .icon-buttons a {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #eee;
+    transition: 0.2s;
+  }
+
+  .icon-buttons a:hover { transform: scale(1.2); background-color: #ddd; }
+
+  .icon-buttons a.linkedin i { color: #0077B5; }
+  .icon-buttons a.scholar i { color: #4285F4; }
+
+  .cta-button {
+    padding: 12px 25px;
+    border: 2px solid #d4af8c;
+    color: #d4af8c;
+  }
+
+  .cta-button:hover {
+    background-color: #d4af8c;
+    color: #5d4037;
+  }
+
+  /* Research Section */
+  .research-section {
+    background-color: #f5f0ed;
+    color: #4b2e1e;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 0 10%;
+    text-align: left;
+  }
+
+  .research-section .title {
+    font-size: 3rem;
+    align-self: center;
+  }
+
+  .research-section .description {
+    font-size: 1rem;
+    line-height: 1.6;
+    align-self: center;
+  }
+
+  /* Publications Section */
+  .publications-section {
+    background-color: #f5f3f0;
+    color: #4a4a4a;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 0 10%;
+    text-align: left;
+  }
+
+  .publications-section .section-title {
+    font-size: 3rem;
+    align-self: center;
+  }
+
+  .publications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: center;
+  }
+
+  .publication-item {
+    padding: 15px;
+    border-left: 4px solid #d4af37;
+    background-color: rgba(255,255,255,0.3);
+  }
+
+  .publication-item p {
+    margin: 0;
+  }
+
+  .explore-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid #8b6914;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    background-color: #8B4513;
+    color: #F5DEB3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-container {
+    max-width: 500px;
+  }
+
+  .contact-container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-container .department-name,
+  .contact-container .building-name,
+  .contact-container .address-line,
+  .contact-container .email,
+  .contact-container .phone {
+    margin-bottom: 10px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .research-section, .publications-section {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .research-section .title,
+    .publications-section .section-title {
+      font-size: 2.5rem;
+      justify-self: center;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="nav-container">
+    <div class="logo">Sazzad Shahrear</div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero section" id="hero">
+  <img src="images/shrszd.jpeg" alt="Sazzad Shahrear" class="profile-image">
+  <h1>Sazzad Shahrear</h1>
+  <p class="subtitle">Doctoral Researcher, University of Helsinki</p>
+  <div class="icon-buttons">
+    <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+    <a href="#" class="scholar"><i class="fas fa-graduation-cap"></i></a>
+  </div>
+  <p class="description">Welcome to my research portfolio! I am dedicated to advancing knowledge in [Your Field].</p>
+  <a href="#research" class="cta-button">Explore My Work</a>
+</section>
+
+<!-- Research Section -->
+<section class="research-section section" id="research">
+  <div class="title">Areas of <br>Research</div>
+  <div class="description">
+    <p>Delve into my research interests and academic pursuits. Through rigorous exploration and study, I have focused on [Your Research Interests].</p>
+  </div>
+</section>
+
+<!-- Publications Section -->
+<section class="publications-section section" id="publications">
+  <div class="section-title">Highlighted Publications</div>
+  <div class="publications-list">
+    <div class="publication-item"><p>[Publication 1], [Status], [Journal]</p></div>
+    <div class="publication-item"><p>[Publication 2], [Status], [Journal]</p></div>
+    <div class="publication-item"><p>[Publication 3], [Status], [Journal]</p></div>
+    <button class="explore-btn">Explore All Publications</button>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section section" id="contact">
+  <div class="contact-container">
+    <h1>Contact Information</h1>
+    <div class="department-name">Department of Chemistry</div>
+    <div class="building-name">Science Center</div>
+    <div class="address-line">500 Terry Francine St.</div>
+    <div class="address-line">San Francisco, CA 94158</div>
+    <div class="email">info@mysite.com</div>
+    <div class="phone">123-456-7890</div>
+  </div>
+</section>
+
+<!-- JS for viewport height fix -->
+<script>
+function setVh() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+window.addEventListener('resize', setVh);
+window.addEventListener('load', setVh);
+setVh();
+</script>
+
+</body>
+</html>
