@@ -77,6 +77,12 @@
       overflow: hidden;
     }
 
+    .section-title {
+  font-size: 3rem;
+  font-weight: normal;  /* keeps it same as research */
+  line-height: 1.2;
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
@@ -96,7 +102,7 @@
       padding: 0 20px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      gap: 100px;
       align-items: center;
       position: relative;
       z-index: 1;
@@ -148,20 +154,27 @@
     .icon-buttons a.scholar i { color: #4285F4; }
 
     /* Buttons (Unified) */
-    .btn {
-      display: inline-block;
-      padding: 12px 25px;
-      border: 2px solid #d4af8c;
-      color: #d4af8c;
-      background: transparent;
-      min-width: 150px;
-      text-align: center;
-    }
+.btn-container {
+  display: flex;
+  justify-content: flex-start; /* or center if you prefer */
+}
 
-    .btn:hover {
-      background-color: #d4af8c;
-      color: #5d4037;
-    }
+.btn {
+  display: inline-block;   /* prevents stretching */
+  padding: 12px 25px;
+  border: 2px solid #d4af8c;
+  color: #d4af8c;
+  background: transparent;
+  min-width: 150px;
+  text-align: center;
+  white-space: nowrap;    /* prevents text wrap that widens button */
+}
+
+.btn:hover {
+  background-color: #d4af8c;
+  color: #5d4037;
+}
+
 
     /* Containers */
     .main-container {
@@ -169,7 +182,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 300px;
+      gap: 100px;
       align-items: flex-start;
     }
 
@@ -332,7 +345,7 @@
   <!-- Publications Section -->
   <section class="publications" id="publications">
     <div class="main-container">
-      <div><h1 class="publication-title">Highlighted <br> Publications</h1></div>
+      <div><h1 class="section-title">Highlighted <br> Publications</h1></div>
       <div>
         <div class="publications-list">
           <div class="publication-item"><p>[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
