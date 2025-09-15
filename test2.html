@@ -281,7 +281,7 @@
     .department-name, .building-name,
     .address-line, .email, .phone {
       color: #D2B48C;
-      margin-bottom: 10px;
+      margin-bottom: 0px;
     }
 
     .social-links {
@@ -404,7 +404,7 @@
   <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="contact-container">
-      <h1>Contact<br>Information</h1>
+      <h1>Contact Information</h1>
       <div class="department-name">Department of Chemistry</div>
       <div class="building-name">Science Center</div>
       <div class="address-line">500 Terry Francine St.</div>
@@ -426,27 +426,6 @@
   <!-- Chat Widget -->
   <div class="chat-widget">💬 Let's Chat!</div>
 
-<script>
-function setSectionHeights() {
-  // Choose a reference height (e.g., your preferred "standard" monitor height)
-  const referenceHeight = 900; // pixels
-  // Get actual screen height
-  const screenHeight = window.innerHeight;
-  // Scale factor
-  const scale = screenHeight / referenceHeight;
-
-  // Select all sections
-  document.querySelectorAll('.section').forEach(section => {
-    section.style.height = `${referenceHeight}px`;        // fixed height
-    section.style.transform = `scale(${scale})`;          // scale to fit actual screen
-    section.style.transformOrigin = 'top';               // scale from top
-  });
-}
-
-// Run on load and resize
-window.addEventListener('load', setSectionHeights);
-window.addEventListener('resize', setSectionHeights);
-</script>
   
 </body>
 </html>
