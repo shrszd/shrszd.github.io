@@ -6,246 +6,141 @@
 <title>Sazzad Shahrear - Portfolio</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-  :root {
-    --vh: 1vh; /* fallback */
-  }
+  * { margin:0; padding:0; box-sizing:border-box; }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
   }
 
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
+  body { scroll-behavior: smooth; }
 
-  /* Header */
-  .header {
-    background-color: #5d4037;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-  }
-
-  .logo {
-    color: white;
-    font-size: 1.5rem;
-  }
-
-  .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-  }
-
-  .nav-menu a:hover {
-    color: #d4af8c;
-  }
-
-  /* Full-screen sections */
+  /* Common section styles */
   .section {
-    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    text-align: center;
-    padding: 20px;
+    flex-direction: column;
   }
+
+  /* Header Navigation */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #5d4037;
+    padding: 15px 0;
+  }
+
+  .nav-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo { color:white; font-size:1.5rem; }
+  .nav-menu { list-style:none; display:flex; gap:40px; }
+  .nav-menu a { color:white; text-decoration:none; transition: color 0.3s; }
+  .nav-menu a:hover { color:#d4af8c; }
 
   /* Hero Section */
   .hero {
     background: linear-gradient(to bottom, transparent 0%, transparent 50%, white 50%, white 100%);
     position: relative;
-    color: white;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('images/shrszd.jpeg');
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
-    opacity: 0.3;
-  }
-
-  .hero img.profile-image {
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    margin-bottom: 20px;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-  }
-
-  .hero .subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-
-  .hero .description {
-    max-width: 600px;
-    color: #000;
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
-  .icon-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .icon-buttons a {
-    width: 36px;
-    height: 36px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: #eee;
-    transition: 0.2s;
-  }
-
-  .icon-buttons a:hover { transform: scale(1.2); background-color: #ddd; }
-
-  .icon-buttons a.linkedin i { color: #0077B5; }
-  .icon-buttons a.scholar i { color: #4285F4; }
-
-  .cta-button {
-    padding: 12px 25px;
-    border: 2px solid #d4af8c;
-    color: #d4af8c;
-  }
-
-  .cta-button:hover {
-    background-color: #d4af8c;
-    color: #5d4037;
-  }
-
-  /* Research Section */
-  .research-section {
-    background-color: #f5f0ed;
-    color: #4b2e1e;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    padding: 0 10%;
-    text-align: left;
-  }
-
-  .research-section .title {
-    font-size: 3rem;
-    align-self: center;
-  }
-
-  .research-section .description {
-    font-size: 1rem;
-    line-height: 1.6;
-    align-self: center;
-  }
-
-  /* Publications Section */
-  .publications-section {
-    background-color: #f5f3f0;
-    color: #4a4a4a;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    padding: 0 10%;
-    text-align: left;
-  }
-
-  .publications-section .section-title {
-    font-size: 3rem;
-    align-self: center;
-  }
-
-  .publications-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-self: center;
-  }
-
-  .publication-item {
-    padding: 15px;
-    border-left: 4px solid #d4af37;
-    background-color: rgba(255,255,255,0.3);
-  }
-
-  .publication-item p {
-    margin: 0;
-  }
-
-  .explore-btn {
-    margin-top: 15px;
-    padding: 10px 20px;
-    border: 2px solid #8b6914;
-  }
-
-  /* Contact Section */
-  .contact-section {
-    background-color: #8B4513;
-    color: #F5DEB3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     text-align: center;
   }
 
-  .contact-container {
-    max-width: 500px;
+  .hero::before {
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0; bottom:50%;
+    background-image: url('images/shrszd.jpeg');
+    background-size: cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    z-index:0;
   }
 
-  .contact-container h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+  .hero-content {
+    position: relative;
+    z-index:1;
+    text-align:center;
+    color:white;
   }
 
-  .contact-container .department-name,
-  .contact-container .building-name,
-  .contact-container .address-line,
-  .contact-container .email,
-  .contact-container .phone {
-    margin-bottom: 10px;
+  .hero-content h1 { font-size:3rem; margin-bottom:0; }
+  .hero-content .subtitle { font-size:1.7rem; margin:10px 0; }
+  .hero-content .description { color:#000; max-width:500px; margin:20px auto; }
+  .hero-content .icon-buttons { display:flex; gap:10px; justify-content:center; margin:10px 0; }
+  .icon-buttons a { display:flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:#eee; transition: all 0.2s; }
+  .icon-buttons a:hover { transform:scale(1.2); background:#ddd; }
+  .cta-button { padding:12px 25px; border:2px solid #d4af8c; color:#d4af8c; text-decoration:none; transition:0.3s; }
+  .cta-button:hover { background:#d4af8c; color:#5d4037; }
+
+  /* Research Section */
+  .research {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    max-width:1200px;
+    gap:60px;
+    padding:0 20px;
+  }
+  .research .title { font-size:3rem; text-align:left; }
+  .research .description { font-size:1rem; text-align:left; }
+
+  /* Publications Section */
+  .publications {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    max-width:1200px;
+    gap:40px;
+    padding:0 20px;
+    color:#000;
+  }
+  .publications .publication-item { padding:1.5rem; background:rgba(255,255,255,0.3); border-left:4px solid #d4af37; border-radius:8px; }
+
+  /* Contact Section */
+  .contact {
+    background-color:#8B4513;
+    color:#F5DEB3;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    padding:60px 40px;
+  }
+  .contact h1 { font-size:3.5rem; margin-bottom:40px; }
+  .contact .department-name, .contact .building-name, .contact .address-line, .contact .email, .contact .phone { margin-bottom:10px; }
+
+  /* Footer */
+  .footer { background:#F5F5F5; color:#888; padding:20px 40px; text-align:center; font-size:0.9rem; }
+
+  /* Chat Widget */
+  .chat-widget {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#333;
+    color:white;
+    padding:12px 20px;
+    border-radius:25px;
+    cursor:pointer;
+    z-index:1000;
   }
 
   /* Responsive */
-  @media (max-width: 768px) {
-    .research-section, .publications-section {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-
-    .research-section .title,
-    .publications-section .section-title {
-      font-size: 2.5rem;
-      justify-self: center;
-    }
+  @media(max-width:768px) {
+    .research, .publications { grid-template-columns:1fr; text-align:center; }
+    .research .title, .research .description { text-align:center; }
   }
 
 </style>
@@ -268,59 +163,70 @@
 </header>
 
 <!-- Hero Section -->
-<section class="hero section" id="hero">
-  <img src="images/shrszd.jpeg" alt="Sazzad Shahrear" class="profile-image">
-  <h1>Sazzad Shahrear</h1>
-  <p class="subtitle">Doctoral Researcher, University of Helsinki</p>
-  <div class="icon-buttons">
-    <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
-    <a href="#" class="scholar"><i class="fas fa-graduation-cap"></i></a>
+<section id="hero" class="section hero">
+  <div class="hero-content">
+    <h1>Sazzad Shahrear</h1>
+    <p class="subtitle">Doctoral Researcher, University of Helsinki</p>
+    <div class="icon-buttons">
+      <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="scholar"><i class="fas fa-graduation-cap"></i></a>
+    </div>
+    <p class="description">Welcome to my research portfolio! I am dedicated to advancing knowledge in [Your Research Field].</p>
+    <a href="#research" class="cta-button">Explore My Work</a>
   </div>
-  <p class="description">Welcome to my research portfolio! I am dedicated to advancing knowledge in [Your Field].</p>
-  <a href="#research" class="cta-button">Explore My Work</a>
 </section>
 
 <!-- Research Section -->
-<section class="research-section section" id="research">
-  <div class="title">Areas of <br>Research</div>
+<section id="research" class="section research">
+  <div class="title">Areas of <br> Research</div>
   <div class="description">
     <p>Delve into my research interests and academic pursuits. Through rigorous exploration and study, I have focused on [Your Research Interests].</p>
   </div>
 </section>
 
 <!-- Publications Section -->
-<section class="publications-section section" id="publications">
-  <div class="section-title">Highlighted Publications</div>
-  <div class="publications-list">
-    <div class="publication-item"><p>[Publication 1], [Status], [Journal]</p></div>
-    <div class="publication-item"><p>[Publication 2], [Status], [Journal]</p></div>
-    <div class="publication-item"><p>[Publication 3], [Status], [Journal]</p></div>
-    <button class="explore-btn">Explore All Publications</button>
+<section id="publications" class="section publications">
+  <div class="publication-item">
+    <p>[Publication Title], [Status], [Journal/Institute] ([Year])</p>
+  </div>
+  <div class="publication-item">
+    <p>[Publication Title], [Status], [Journal/Institute] ([Year])</p>
+  </div>
+  <div class="publication-item">
+    <p>[Publication Title], [Status], [Journal/Institute] ([Year])</p>
   </div>
 </section>
 
 <!-- Contact Section -->
-<section class="contact-section section" id="contact">
-  <div class="contact-container">
-    <h1>Contact Information</h1>
-    <div class="department-name">Department of Chemistry</div>
-    <div class="building-name">Science Center</div>
-    <div class="address-line">500 Terry Francine St.</div>
-    <div class="address-line">San Francisco, CA 94158</div>
-    <div class="email">info@mysite.com</div>
-    <div class="phone">123-456-7890</div>
-  </div>
+<section id="contact" class="section contact">
+  <h1>Contact Information</h1>
+  <div class="department-name">Department of Chemistry</div>
+  <div class="building-name">Science Center</div>
+  <div class="address-line">500 Terry Francine St.</div>
+  <div class="address-line">San Francisco, CA 94158</div>
+  <div class="email">info@mysite.com</div>
+  <div class="phone">123-456-7890</div>
 </section>
 
-<!-- JS for viewport height fix -->
+<div class="footer">©2035 by Daniel Tenant. Powered by HTML+CSS+JS</div>
+<div class="chat-widget">💬 Let's Chat!</div>
+
 <script>
-function setVh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+// Fix section height scaling for all monitors
+function setSectionHeights() {
+  const referenceHeight = 900; // reference "standard" height
+  const screenHeight = window.innerHeight;
+  const scale = screenHeight / referenceHeight;
+
+  document.querySelectorAll('.section').forEach(section => {
+    section.style.height = `${referenceHeight}px`;        // base height
+    section.style.transform = `scale(${scale})`;          // scale to fit actual screen
+    section.style.transformOrigin = 'top';               // scale from top
+  });
 }
-window.addEventListener('resize', setVh);
-window.addEventListener('load', setVh);
-setVh();
+
+window.addEventListener('load', setSectionHeights);
+window.addEventListener('resize', setSectionHeights);
 </script>
 
 </body>
