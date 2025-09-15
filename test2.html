@@ -1,1 +1,263 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sazzad Shahrear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f3f0;
+            line-height: 1.6;
+        }
+
+        /* Header Navigation */
+        .header {
+            background-color: #6b4423;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #d4af37;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #f0d978;
+        }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .content-section {
+            padding: 2rem 0;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: #4a4a4a;
+            font-weight: normal;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .publication-item {
+            padding: 1.5rem;
+            background-color: rgba(255,255,255,0.3);
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+
+        .publication-text {
+            color: #000000;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .explore-btn {
+            margin-top: 2rem;
+            padding: 0.75rem 2rem;
+            background-color: transparent;
+            border: 2px solid #8b6914;
+            color: #8b6914;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background-color: #8b6914;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #6b4423;
+            padding: 1rem 0;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .chat-widget {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #2c2c2c;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .chat-widget:hover {
+            transform: translateY(-2px);
+        }
+
+        .chat-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .chat-widget {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Sazzad Shahrear</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#blog">Research Blog</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-container">
+        <section class="content-section">
+            <h1 class="section-title">Highlighted<br>Publications</h1>
+        </section>
+
+        <section class="content-section">
+            <div class="publications-list">
+                <div class="publication-item">
+                    <p class="publication-text">[Publication Title], [Publication Status], <span class="journal-name">[Journal/Institute]</span> ([Year])</p>
+                </div>
+
+                <div class="publication-item">
+                    <p class="publication-text">[Publication Title], [Publication Status], <span class="journal-name">[Journal/Institute]</span> ([Year])</p>
+                </div>
+
+                <div class="publication-item">
+                    <p class="publication-text">[Publication Title], [Publication Status], <span class="journal-name">[Journal/Institute]</span> ([Year])</p>
+                </div>
+
+                <button class="explore-btn">Explore All Publications</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <svg class="chat-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+        </svg>
+        Let's Chat!
+    </div>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Chat widget functionality
+        document.querySelector('.chat-widget').addEventListener('click', function() {
+            alert('Chat functionality would be implemented here!');
+        });
+
+        // Explore button functionality
+        document.querySelector('.explore-btn').addEventListener('click', function() {
+            alert('Redirecting to full publications page...');
+        });
+    </script>
+</body>
+</html>
