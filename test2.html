@@ -108,7 +108,6 @@
     .profile-image {
       width: 100%;
       max-width: 400px;
-      height: auto;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
@@ -146,7 +145,6 @@
       height: 36px;
       border-radius: 50%;
       background-color: #eee;
-      text-decoration: none;
       transition: all 0.2s;
     }
 
@@ -155,13 +153,8 @@
       background-color: #ddd;
     }
 
-    .icon-buttons a.linkedin i {
-      color: #0077B5;
-    }
-
-    .icon-buttons a.scholar i {
-      color: #4285F4;
-    }
+    .icon-buttons a.linkedin i { color: #0077B5; }
+    .icon-buttons a.scholar i { color: #4285F4; }
 
     .cta-button {
       display: inline-block;
@@ -176,6 +169,37 @@
     .cta-button:hover {
       background-color: #d4af8c;
       color: #5d4037;
+    }
+
+    /* Research Section */
+    .research {
+      background-color: #f5f0ed;
+      color: #4b2e1e;
+      padding: 0 10%;
+      text-align: left;
+    }
+
+    .research .title {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    .research .description {
+      max-width: 500px;
+    }
+
+    .research button {
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background: none;
+      border: 1px solid #4b2e1e;
+      color: #4b2e1e;
+      cursor: pointer;
+    }
+
+    .research button:hover {
+      background-color: #4b2e1e;
+      color: #fff;
     }
 
     /* Publications Section */
@@ -211,9 +235,7 @@
       border-left: 4px solid #d4af37;
     }
 
-    .publication-text {
-      color: #000;
-    }
+    .publication-text { color: #000; }
 
     .explore-btn {
       margin-top: 2rem;
@@ -222,7 +244,6 @@
       border: 2px solid #8b6914;
       color: #8b6914;
       cursor: pointer;
-      transition: all 0.3s ease;
     }
 
     .explore-btn:hover {
@@ -230,41 +251,43 @@
       color: white;
     }
 
-    /* Research Section */
-    .research {
+    /* Contact Section */
+    .contact {
+      background-color: #6B3410;
+      color: #F5DEB3;
+      padding: 60px 40px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .contact-container { max-width: 600px; }
+
+    .contact h1 {
+      font-size: 3.5rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+
+    .department-name, .building-name,
+    .address-line, .email, .phone {
+      color: #D2B48C;
+      margin-bottom: 10px;
+    }
+
+    .social-links {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15rem 10%;
-      color: #4b2e1e;
-      background-color: white;
+      gap: 15px;
+      margin-top: 20px;
     }
 
-    .research .title {
-      font-size: 3rem;
-      line-height: 1.2;
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      background-color: #D2B48C;
+      transition: background-color 0.3s ease;
     }
 
-    .research .description {
-      max-width: 400px;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .research button {
-      margin-top: 2rem;
-      padding: 0.5rem 1rem;
-      background: none;
-      border: 1px solid #4b2e1e;
-      color: #4b2e1e;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .research button:hover {
-      background-color: #4b2e1e;
-      color: #fff;
-    }
+    .social-icon:hover { background-color: #F5DEB3; }
 
     /* Footer */
     .footer {
@@ -281,17 +304,16 @@
       right: 20px;
       background-color: #333;
       color: white;
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-size: 0.9rem;
+      padding: 12px 20px;
+      border-radius: 25px;
       cursor: pointer;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .chat-widget:hover {
-      background-color: #555;
-    }
+    .chat-widget:hover { background-color: #555; }
 
     /* Responsive */
     @media (max-width: 768px) {
@@ -301,14 +323,8 @@
         text-align: center;
       }
 
-      .section-title {
-        font-size: 2.5rem;
-      }
-
-      .research {
-        padding: 2rem;
-        text-align: center;
-      }
+      .research { text-align: center; }
+      .contact { align-items: center; text-align: center; }
     }
   </style>
 </head>
@@ -320,11 +336,9 @@
       <nav>
         <ul class="nav-menu">
           <li><a href="#about">About</a></li>
-          <li><a href="#publications">Publications</a></li>
           <li><a href="#research">Research</a></li>
-          <li><a href="#blog">Research Blog</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
         </ul>
       </nav>
     </div>
@@ -340,40 +354,13 @@
         <h1>Sazzad Shahrear</h1>
         <p class="subtitle">Doctoral Researcher, University of Helsinki</p>
         <div class="icon-buttons">
-          <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="linkedin">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://scholar.google.com/citations?user=yourid" target="_blank" class="scholar">
-            <i class="fas fa-graduation-cap"></i>
-          </a>
+          <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="scholar"><i class="fas fa-graduation-cap"></i></a>
         </div>
         <p class="description">
           Welcome to my research portfolio! I am dedicated to advancing knowledge in [Your Research Field].
         </p>
-        <a href="#publications" class="cta-button">Explore My Work</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications Section -->
-  <section class="publications" id="publications">
-    <div class="main-container">
-      <div>
-        <h1 class="section-title">Highlighted <br> Publications</h1>
-      </div>
-      <div>
-        <div class="publications-list">
-          <div class="publication-item">
-            <p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p>
-          </div>
-          <div class="publication-item">
-            <p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p>
-          </div>
-          <div class="publication-item">
-            <p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p>
-          </div>
-          <button class="explore-btn">Explore All Publications</button>
-        </div>
+        <a href="#research" class="cta-button">Explore My Work</a>
       </div>
     </div>
   </section>
@@ -385,6 +372,38 @@
       <div class="description">
         <p>Delve into my research interests and academic pursuits. Through rigorous exploration and study, I have focused on [Your Research Interests]. This space provides an insight into the depth and breadth of my research, and the impact it has in the academic and scientific spheres.</p>
         <button>Discover More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications Section -->
+  <section class="publications" id="publications">
+    <div class="main-container">
+      <div><h1 class="section-title">Highlighted Publications</h1></div>
+      <div>
+        <div class="publications-list">
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
+          <button class="explore-btn">Explore All Publications</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <h1>Contact<br>Information</h1>
+      <div class="department-name">Department of Chemistry</div>
+      <div class="building-name">Science Center</div>
+      <div class="address-line">500 Terry Francine St.</div>
+      <div class="address-line">San Francisco, CA 94158</div>
+      <div class="email">info@mysite.com</div>
+      <div class="phone">123-456-7890</div>
+      <div class="social-links">
+        <div class="social-icon"></div>
+        <div class="social-icon"></div>
       </div>
     </div>
   </section>
