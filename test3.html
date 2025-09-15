@@ -13,30 +13,45 @@
             color: #4b2e1e;
         }
 
-        /* Header */
-        header {
-            background-color: #4b2e1e;
-            color: #fff;
+        /* Header/Navigation */
+        .header {
+            background-color: #5d4037;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            width: 100%;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 0 20px;
         }
 
-        header h1 {
-            margin: 0;
+        .logo {
+            color: white;
+            font-size: 1.5rem;
             font-weight: normal;
         }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 2rem;
-            font-size: 1rem;
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
         }
 
-        nav a:hover {
-            text-decoration: underline;
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #ffffff;
         }
 
         /* Main section */
