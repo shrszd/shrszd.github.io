@@ -179,14 +179,23 @@
       color: #4b2e1e;
       padding: 0 10%;
       text-align: left;
+      display: flex;
+    flex-direction: row;   /* force left-to-right */
+    justify-content: space-between;
+    align-items: flex-start; /* so top edges align */
+    padding: 8rem 10%;
+    gap: 50px; /* spacing between title and description */
     }
 
     .research .title {
+      flex: 1;
       font-size: 3rem;
       margin-bottom: 2rem;
     }
 
     .research .description {
+      flex: 2;
+      font-size: 1rem;
       max-width: 500px;
     }
 
