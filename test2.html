@@ -189,10 +189,10 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
-      gap: 100px;
-      align-items: center;
+      gap: 300px;
+      align-items: flex-top;
       font-family: 'Georgia', serif;
-      justify-items: center;
+      justify-items: flex-right;
     }
 
     /* Research Section */
@@ -202,16 +202,17 @@
       font-family: 'Georgia', serif;
     }
 
-    .research .title {
+    .research-title {
             font-size: 3rem;
             line-height: 1.2;
             font-family: 'Georgia', serif;
     }
 
-    .research .description {
+    .research-description {
             max-width: 400px;
             font-size: 1.5rem;
             line-height: 1.6;
+            margin-bottom: 15px;
     }
 
     .research-button {
@@ -232,11 +233,11 @@
 
     /* Publications Section */
     .publications {
-      background-color: #f5f3f0;
+      background-color: white;
       font-family: 'Georgia', serif;
     }
 
-    .section-title {
+    .publication-title {
       font-size: 3rem;
       line-height: 1.2;
       font-family: 'Georgia', serif;
@@ -257,7 +258,7 @@
 
     .publication-text { color: #000; }
 
-    .explore-btn {
+    .explore {
       display: inline-block;
       padding: 12px 25px;
       border: 2px solid #d4af8c;
@@ -267,7 +268,7 @@
       transition: all 0.3s ease;
     }
 
-    .explore-btn:hover {
+    .explore:hover {
       background-color: #d4af8c;
       color: #5d4037;
     }
@@ -389,7 +390,7 @@
         <p class="description">
           Welcome to my research portfolio! I am dedicated to advancing knowledge in [Your Research Field].
         </p>
-        <a href="#research" class="cta-button">Explore My Work</a>
+        <a href="#research" class="explore">Explore My Work</a>
       </div>
     </div>
   </section>
@@ -397,10 +398,10 @@
   <!-- Research Section -->
   <section class="research" id="research">
     <div class="main-container">
-      <div class="title">Areas of <br> Research</div>
-      <div class="description">
+      <div class="research-title">Areas of <br> Research</div>
+      <div class="research-title">
         <p>Delve into my research interests and academic pursuits. Through rigorous exploration and study, I have focused on [Your Research Interests]. This space provides an insight into the depth and breadth of my research, and the impact it has in the academic and scientific spheres.</p>
-        <button class="research-button">Discover More</button>
+        <button class="explore">Discover More</button>
       </div>
     </div>
   </section>
@@ -408,13 +409,13 @@
   <!-- Publications Section -->
   <section class="publications" id="publications">
     <div class="main-container">
-      <div><h1 class="section-title">Highlighted <br> Publications</h1></div>
+      <div><h1 class="publication-title">Highlighted <br> Publications</h1></div>
       <div>
         <div class="publications-list">
           <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
           <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
           <div class="publication-item"><p class="publication-text">[Publication Title], [Status], <span>[Journal/Institute]</span> ([Year])</p></div>
-          <button class="explore-btn">Explore All Publications</button>
+          <button class="explore">Explore All Publications</button>
         </div>
       </div>
     </div>
